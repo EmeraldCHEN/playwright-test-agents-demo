@@ -30,6 +30,6 @@ npx playwright install
 
 ---
 
-📖 [Official Playwright Docs](https://playwright.dev/docs/test-agents)
+📖 (Official Playwright Docs)[https://playwright.dev/docs/test-agents]
 
-- [YouTube](https://www.youtube.com/watch?v=pajx0rH0ss0)
+- (YouTube)[https://www.youtube.com/watch?v=pajx0rH0ss0]
