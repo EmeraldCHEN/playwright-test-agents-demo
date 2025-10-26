@@ -14,7 +14,6 @@ This test plan covers automated functional and edge-case test scenarios for the 
 
 Assumptions:
 - Tests start from a blank/fresh state (no prior session cookies or localStorage). Clear session before each test.
-- Test account used: `emeraldchen@emeraldchen25.onmicrosoft.com` (used only for exploratory runs; credentials managed securely outside test code).
 - The portal is deployed at the URL above and accessible from the test environment.
 - Application content (sample text/images) may be static sample content; tests should validate functional behavior more than exact text copy.
 
@@ -29,7 +28,7 @@ Test objectives:
 - Recommended browser: Chromium (headless for CI; headed for debugging)
 - Fresh browser context per test
 - Test user(s):
-  - Primary: `emeraldchen@emeraldchen25.onmicrosoft.com` (assume valid AD account)
+  - Primary: `......onmicrosoft.com` (assume valid AD account)
   - Secondary/Negative: a non-existent or invalid user for negative tests
 - Files for upload tests: small PDF (<= 100 KB), empty file, large file (~10 MB) to test limits
 
@@ -51,14 +50,14 @@ Assumptions: fresh browser context, network access to Microsoft login endpoints.
 Steps:
 1. Navigate to `https://permitapplication-y2pbo.powerappsportals.com/`
 2. Click "Sign in" (if not auto-redirected)
-3. On Microsoft login page, enter valid username : emeraldchen@emeraldchen25.onmicrosoft.com
+3. On Microsoft login page, enter valid username 
 4. and continue
-5. Enter valid password :  *WRNf2025
+5. Enter valid password 
 6. and sign in
 7. If prompted for "Stay signed in?", select the option "Yes" 
 8. Click on 'Sign in' buntton on the right top corner on the homepage
-9. Enter valid username : emeraldchen@emeraldchen25.onmicrosoft.com
-10. Enter  valid password :  *WRNf2025
+9. Enter valid username 
+10. Enter  valid password 
 11. Click on 'Sign in' button to log in
 12. Click 'Our Permits' nav item
 13. Select 'Deck' tile to navigate to hte Default Permit page
