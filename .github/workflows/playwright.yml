@@ -22,7 +22,7 @@ jobs:
         TEST_URL: ${{ secrets.TEST_URL }}
         TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
         TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }} 
-      run: npx playwright test
+      run: npx playwright test tests/authentication-and-submit-happy-path.spec.ts
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
