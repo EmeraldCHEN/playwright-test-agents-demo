@@ -19,9 +19,7 @@ Before running the tests, make sure you have:
 
 - Node.js v18+ installed
 - npm installed
-- A **Power Apps environment**
-- A **test account** (no MFA enabled)
-- Playwright installed globally or locally:
+- Playwright installed:
 
 ```bash
 npm install -D @playwright/test
