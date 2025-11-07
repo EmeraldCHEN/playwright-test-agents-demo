@@ -33,4 +33,6 @@ npx playwright install
 
 📖 [Official Playwright Docs](https://playwright.dev/docs/test-agents)
 
+📖 [Using secrets in GitHub Actions](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets)
+
 - [YouTube](https://www.youtube.com/watch?v=pajx0rH0ss0)
