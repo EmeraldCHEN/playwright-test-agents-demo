@@ -5,18 +5,22 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Authentication and application — Happy Path', () => {
   test('Authentication and application — Happy Path', async ({ page }) => {
-    // 1. Navigate to `https://permitapplication-y2pbo.powerappsportals.com/`
 
-    await page.goto('https://permitapplication-y2pbo.powerappsportals.com/');
+    const url = process.env.TEST_URL;
+    const email = process.env.TEST_EMAIL;
+    const password = process.env.TEST_PASSWORD;
+    
+    // 1. Navigate to the Power Pages website demo
+    await page.goto(url);
 
-    // 2-3. On Microsoft login page, enter valid username : emeraldchen@emeraldchen25.onmicrosoft.com
-    await page.getByRole('textbox', { name: 'Enter your email, phone, or' }).fill('.....onmicrosoft.com');
+    // 2-3. On Microsoft login page, enter valid username 
+    await page.getByRole('textbox', { name: 'Enter your email, phone, or' }).fill(email);
 
     // 4. and continue
     await page.getByRole('button', { name: 'Next' }).click();
 
-    // 5. Enter valid password :  *WRNf2025
-    await page.getByRole('textbox', { name: 'Enter the password for' }).fill('xxxxxx');
+    // 5. Enter valid password 
+    await page.getByRole('textbox', { name: 'Enter the password for' }).fill(password);
 
     // 6. and sign in
     await page.getByRole('button', { name: 'Sign in' }).click();
@@ -24,20 +28,17 @@ test.describe('Authentication and application — Happy Path', () => {
     // 7. If prompted for "Stay signed in?", select the option "Yes"
     await page.getByRole('button', { name: 'Yes' }).click();
 
-    // 8. Click on 'Sign in' button on the right top corner on the homepage (if shown)
-
+    // 8. Click on 'Sign in' button on the right top corner on the homepage
     await page.getByRole('link', { name: 'Sign in' }).click();
   
-
-    // 9. Enter valid username : emeraldchen@emeraldchen25.onmicrosoft.com
-    await page.getByRole('textbox', { name: 'Username' }).fill('.....onmicrosoft.com');
+    // 9. Enter valid username 
+    await page.getByRole('textbox', { name: 'Username' }).fill(email);
     
-    // 10. Enter valid password :  *WRNf2025
-    await page.getByRole('textbox', { name: 'Password' }).fill('xxxxxx');
+    // 10. Enter valid password 
+    await page.getByRole('textbox', { name: 'Password' }).fill(password);
       
     // 11. Click on 'Sign in' button to log in
     await page.getByRole('button', { name: 'Sign in' }).click();
-
 
     // 12. Click 'Our Permits' nav item
     await page.getByRole('link', { name: 'Our Permits' }).click();
@@ -73,7 +74,7 @@ test.describe('Authentication and application — Happy Path', () => {
     await expect(page.getByText('Permit submission successful', { exact: false })).toBeVisible();
     await page.getByRole('link', { name: 'My Permits' }).click();
    
-    // Assert the 'Submitted' status is visible in the My Permits table (robust locator)
+    // 23. Assert the 'Submitted' status is visible in the My Permits table 
     await expect(
       page.getByRole('cell', { name: /Submitted/i })
     ).toBeVisible();
