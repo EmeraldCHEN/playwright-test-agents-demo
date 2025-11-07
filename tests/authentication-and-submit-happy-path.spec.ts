@@ -6,9 +6,13 @@ import { test, expect } from '@playwright/test';
 test.describe('Authentication and application — Happy Path', () => {
   test('Authentication and application — Happy Path', async ({ page }) => {
 
-    const url = process.env.TEST_URL;
-    const email = process.env.TEST_EMAIL;
-    const password = process.env.TEST_PASSWORD;
+    // const url = process.env.TEST_URL;
+    // const email = process.env.TEST_EMAIL;
+    // const password = process.env.TEST_PASSWORD;
+
+    const url = "https://permitapplication-y2pbo.powerappsportals.com/";
+    const email = "emeraldchen@emeraldchen25.onmicrosoft.com";
+    const password = "*WRNf2025";
     
     // 1. Navigate to the Power Pages website demo
     await page.goto(url);
@@ -70,13 +74,9 @@ test.describe('Authentication and application — Happy Path', () => {
     // 21. Click on 'Submit' button
     await page.getByRole('button', { name: /Submit/i }).click();
 
-    // 22. Verify the message displaying : "Permit submission successful"
+    // 22. Verify the permit submission successful
     await expect(page.getByText('Permit submission successful', { exact: false })).toBeVisible();
     await page.getByRole('link', { name: 'My Permits' }).click();
-   
-    // 23. Assert the 'Submitted' status is visible in the My Permits table 
-    await expect(
-      page.getByRole('cell', { name: /Submitted/i })
-    ).toBeVisible();
+    await expect(page.locator('.table-status-cell.submitted').nth(0)).toHaveText("Submitted");
   });
 });
