@@ -1,18 +1,11 @@
-// spec: tests/permit_portal_test_plan.md
-// seed: tests/seed.spec.ts
-
 import { test, expect } from '@playwright/test';
 
 test.describe('Authentication and application — Happy Path', () => {
   test('Authentication and application — Happy Path', async ({ page }) => {
 
-    // const url = process.env.TEST_URL;
-    // const email = process.env.TEST_EMAIL;
-    // const password = process.env.TEST_PASSWORD;
-
-    const url = "https://permitapplication-y2pbo.powerappsportals.com/";
-    const email = "emeraldchen@emeraldchen25.onmicrosoft.com";
-    const password = "*WRNf2025";
+    const url = process.env.TEST_URL;
+    const email = process.env.TEST_EMAIL;
+    const password = process.env.TEST_PASSWORD;
     
     // 1. Navigate to the Power Pages website demo
     await page.goto(url);
